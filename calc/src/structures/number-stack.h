@@ -1,6 +1,6 @@
 /**
- * @Name
- * Number stack header
+ *  @Name
+ *  Number stack header
  *
  *  @Description
  *  Definition of number stack.
