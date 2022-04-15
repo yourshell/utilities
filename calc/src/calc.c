@@ -4,9 +4,6 @@
 #include "expression.h"
 
 
-#define BUFSIZE 256
-
-
 char *readline(void);
 void input(void);
 
@@ -31,9 +28,12 @@ char *readline(void) {
     while (1) {
         c = getchar();
 
-        if (c == EOF || c == '\n') {
+        if (c == '\n') {
             buffer[position] = '\0';
             return buffer;
+        } else if (c == EOF) {
+            printf("\n");
+            exit(EXIT_SUCCESS);
         } else {
             buffer[position] = c;
         }

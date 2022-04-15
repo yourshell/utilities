@@ -7,6 +7,7 @@
  * */
 
 
+
 #ifndef _STDIO_H
 #include <stdio.h>
 #endif
@@ -129,7 +130,7 @@ void number_push(NumberStack *s, double item) {
 double number_pop(NumberStack *s) {
     if(number_is_empty(s)) {
         printf("Error: NumberStack is empty\n");
-        exit(1);
+        // exit(EXIT_FAILURE);
     }
 	return s->array[s->top--];
 }
