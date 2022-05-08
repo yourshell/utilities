@@ -24,9 +24,9 @@
  *  Stack of operator definition.
  * */
 typedef struct CharStack {
-	int top;                    // Current number of elements on stack
-	unsigned int capacity;      // Stack size
-	char *array;                // Array of double values
+    int top;                    // Current number of elements on stack
+    unsigned int capacity;      // Stack size
+    char *array;                // Array of double values
 } CharStack;
 
 
@@ -45,11 +45,11 @@ typedef struct CharStack {
  *  @rtype: CharStack*
  * */
 CharStack *create_char_stack(unsigned int capacity) {
-	CharStack *s = (CharStack *)malloc(sizeof(CharStack));
-	s->capacity = capacity;
-	s->top = -1;                // No items yet
-	s->array = (char *)malloc(s->capacity * sizeof(char));
-	return s;
+    CharStack *s = (CharStack *)malloc(sizeof(CharStack));
+    s->capacity = capacity;
+    s->top = -1;                // No items yet
+    s->array = (char *)malloc(s->capacity * sizeof(char));
+    return s;
 }
 
 
@@ -68,7 +68,7 @@ CharStack *create_char_stack(unsigned int capacity) {
  *  @rtype: int
  * */
 int char_is_full(CharStack *s) {
-	return s->top == (int)(s->capacity - 1);
+    return s->top == (int)(s->capacity - 1);
 }
 
 
@@ -87,7 +87,7 @@ int char_is_full(CharStack *s) {
  *  @rtype: int
  * */
 int char_is_empty(CharStack *s) {
-	return s->top == -1;
+    return s->top == -1;
 }
 
 
@@ -107,9 +107,9 @@ int char_is_empty(CharStack *s) {
  *  @return: `side effect`: Added new item to the stack
  * */
 void char_push(CharStack *s, char item) {
-	if(char_is_full(s))
-		return;
-	s->array[++s->top] = item;
+    if(char_is_full(s))
+        return;
+    s->array[++s->top] = item;
 }
 
 
@@ -128,11 +128,11 @@ void char_push(CharStack *s, char item) {
  *  @rtype: char 
  * */
 char char_pop(CharStack *s) {
-	if(char_is_empty(s)) {
-		printf("Error: CharStack is empty\n");
-		exit(EXIT_FAILURE);
-	}
-	return s->array[s->top--];
+    if(char_is_empty(s)) {
+        printf("Error: CharStack is empty\n");
+        exit(EXIT_FAILURE);
+    }
+    return s->array[s->top--];
 }
 
 
@@ -151,9 +151,9 @@ char char_pop(CharStack *s) {
  *  @rtype: char 
  * */
 char char_peek(CharStack *s) {
-	if(char_is_empty(s)) {
-		printf("Error: CharStack is empty\n");
-		exit(EXIT_FAILURE);
-	}
-	return s->array[s->top];
+    if(char_is_empty(s)) {
+        printf("Error: CharStack is empty\n");
+        exit(EXIT_FAILURE);
+    }
+    return s->array[s->top];
 }

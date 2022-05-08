@@ -24,9 +24,9 @@
  *  Stack of number definition.
  * */
 typedef struct NumberStack {
-	int top;                    // Current number of elements on stack
-	unsigned int capacity;      // Stack size
-	double *array;              // Array of double values
+    int top;                    // Current number of elements on stack
+    unsigned int capacity;      // Stack size
+    double *array;              // Array of double values
 } NumberStack;
 
 
@@ -45,11 +45,11 @@ typedef struct NumberStack {
  *  @rtype: NumberStack*
  * */
 NumberStack *create_number_stack(unsigned int capacity) {
-	NumberStack *s = (NumberStack *)malloc(sizeof(NumberStack));
-	s->capacity = capacity;
-	s->top = -1;                // No items yet
-	s->array = (double *)malloc(s->capacity * sizeof(double));
-	return s;
+    NumberStack *s = (NumberStack *)malloc(sizeof(NumberStack));
+    s->capacity = capacity;
+    s->top = -1;                // No items yet
+    s->array = (double *)malloc(s->capacity * sizeof(double));
+    return s;
 }
 
 
@@ -68,7 +68,7 @@ NumberStack *create_number_stack(unsigned int capacity) {
  *  @rtype: int
  * */
 int number_is_full(NumberStack *s) {
-	return s->top == (int)(s->capacity - 1);
+    return s->top == (int)(s->capacity - 1);
 }
 
 
@@ -87,7 +87,7 @@ int number_is_full(NumberStack *s) {
  *  @rtype: int
  * */
 int number_is_empty(NumberStack *s) {
-	return s->top == -1;
+    return s->top == -1;
 }
 
 
@@ -107,9 +107,9 @@ int number_is_empty(NumberStack *s) {
  *  @return: `side effect`: Added new item to the stack
  * */
 void number_push(NumberStack *s, double item) {
-	if(number_is_full(s))
-		return;
-	s->array[++s->top] = item;
+    if(number_is_full(s))
+        return;
+    s->array[++s->top] = item;
 }
 
 
@@ -128,9 +128,7 @@ void number_push(NumberStack *s, double item) {
  *  @rtype: double
  * */
 double number_pop(NumberStack *s) {
-    if(number_is_empty(s)) {
+    if(number_is_empty(s))
         printf("Error: NumberStack is empty\n");
-        // exit(EXIT_FAILURE);
-    }
-	return s->array[s->top--];
+    return s->array[s->top--];
 }

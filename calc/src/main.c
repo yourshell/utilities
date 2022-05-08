@@ -22,7 +22,7 @@ void input(void);
 //! main
 int main(void) {
     input();
-	return 0;
+    return 0;
 }
 
 
@@ -83,19 +83,19 @@ char *readline(void) {
  *  Example of express evaluator usage.
  */
 void input(void) {
-	char *expression;
-    
+    char *expression;
+
     printf("%scalc.c\n", HEADER);
     printf("Type some expressions and get results.\n");
-	printf("To finish entering expressions just type - 'end'%s\n\n\n", NC);
+    printf("To finish entering expressions just type - 'end'%s\n\n\n", NC);
 
-	while(1) {
-		printf(">>> ");
+    while(1) {
+        printf(">>> ");
         expression = readline();
-		if(strcmp(expression, "end")) {
+        if(strcmp(expression, "end")) {
             printf("%f\n", evaluate(expression));
-		} else {
-			break;
+        } else {
+            break;
         }
-	}
+    }
 }
